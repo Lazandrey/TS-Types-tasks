@@ -1,4 +1,4 @@
-type bookType = {
+type BookType = {
   id: string;
   title: string;
   author: string;
@@ -7,14 +7,14 @@ type bookType = {
   published: Date;
 };
 
-const books: bookType[] = [];
+const books: BookType[] = [];
 
-type BookCreationType = Omit<bookType, "id">;
+type BookCreationType = Omit<BookType, "id">;
 
-type bookUpdateType = Pick<bookType, "title"> & Pick<bookType, "author">;
-type bookIdType = Pick<bookType, "id">;
+type BookUpdateType = Pick<BookType, "title"> & Pick<BookType, "author">;
+type BookIdType = Pick<BookType, "id">;
 
-type carType = {
+type CarType = {
   name: string;
   brand: string;
   model: string;
@@ -22,9 +22,9 @@ type carType = {
   engineType: "Petrol" | "Hybrid" | "Electric" | "Diese;";
 };
 
-type carUpdateType = Partial<carType>;
+type CarUpdateType = Partial<CarType>;
 
-let carUpdated: carUpdateType = {
+let carUpdated: CarUpdateType = {
   name: "Civic",
   brand: "Honda",
   model: "LX CVT",
@@ -34,7 +34,7 @@ let carUpdated: carUpdateType = {
 
 console.log(carUpdated, carUpdated.model);
 
-const updateCar = ({ name, brand, model, year, engineType }: carUpdateType) => {
+const updateCar = ({ name, brand, model, year, engineType }: CarUpdateType) => {
   const newCarData = {
     ...(name && { name }),
     ...(brand && { brand }),
