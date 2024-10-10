@@ -11,7 +11,7 @@ const books: BookType[] = [];
 
 type BookCreationType = Omit<BookType, "id">;
 
-type BookUpdateType = Pick<BookType, "title"> & Pick<BookType, "author">;
+type BookUpdateType = Pick<BookType, "title" | "author">;
 type BookIdType = Pick<BookType, "id">;
 
 type CarType = {
